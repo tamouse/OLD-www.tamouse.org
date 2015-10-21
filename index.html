@@ -1,86 +1,102 @@
 ---
-layout: page
+layout: default
+boxes:
+  -
+    - name: blog
+      title: Blog
+      description: >-
+        My web log. Things I find interesting and want to share with
+        others. Somewhat of a hodgepodge of funny, sciency, crittery
+        stuff.
+    - name: swaac
+      title: SWaaC
+      description: >-
+        Software As A Craft (SWAAC), my
+        development blog (aka devblog) where I share code, craft, process
+        and learning about how to do the craft of writing, testing,
+        releasing software.
+    - name: resume
+      title: Resume
+      description: >-
+        My online resume site, built
+        in <a href="http://middlemanapp.com">middleman</a>.
+  -
+    - name: art
+      title: Art
+      description: >-
+        Begun in March 2015, this is my place to display and talk
+        about my art, mainly watercolour painting at the moment.
+    - name: recipes
+      title: Recipes
+      description: >-
+        My online (food) cookbook.
+    - name: wiki
+      title: Wiki
+      description: >-
+        A very out-of-date and rather
+        defunct <a href="http://pmwiki.org">PmWiki</a> that is a
+        collection of a whole pile of things. I'm moving most of the
+        entries into other sections of this site.
 ---
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <p>
-      Welcome to <a href="http://www.tamouse.org">tamouse.org</a>,
-      Tamara Temple's home on the web.
-    </p>
+<div class="front-page">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="text-center">Tamouse.Org</h1>
+      <p class="text-center">
+	Welcome to Tamara Temple's home on the web.
+      </p>
 
-    <p>
-      I am a geeky person, mom of 2 grown kids,
-      a <strong>webologist</strong>, a software craftsperson, a
-      beginning watercolourist, sketcher, musician, photographer, and
-      reclusive chatter.
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12 text-center">
-    <h1>What you'll find on <em>tamouse.org</em></h1>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <a href="http://blog.tamouse.org">blog</a> - my web log. Things
-      I find interesting and want to share with others. Somewhat of a
-      hodgepodge of funny, sciency, crittery, and stuff.
-    </p>
+      <p class="container text-center">
+	I am a geeky person, mom of 2 grown kids,
+	a webologist, a software craftsperson, a
+	beginning watercolourist, sketcher, musician, photographer, and
+	reclusive chatter.
+      </p>
+    </div>
   </div>
 
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <a href="http://swaac.tamouse.org">swaac</a> - Software As A Craft (SWAAC), my
-      development blog (aka devblog) where I share code, craft, process
-      and learning about how to do the craft of writing, testing,
-      releasing software.
-    </p>
-  </div>
+  <!-- <main class="container"> -->
+    <section class="container feature">
+      <div class="page-header">
+	<h1 class="text-center">What you'll find on <em>tamouse.org</em></h1>
+      </div>
 
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <a href="http://resume.tamouse.org">resume</a> - my online resume site, built
-      in <a href="http://middlemanapp.com">middleman</a>.
-    </p>
-  </div>
+      {% for row in page.boxes %}
+      <div class="row">
+	{% for box in row %}
+	<div class="col-xs-12 col-sm-4">
+	  <div id="{{box.name}}-panel" class="panel panel-primary">
+	    <div class="panel-heading">
+	      <h1 class="panel-title text-center"><a href="http://{{box.name}}.tamouse.org">{{box.title}}</a></h1>
+	    </div>
+	    <div class="panel-body">
+	      <div>
+		{{box.description}}
+	      </div>
+	    </div>
+	    <div class="panel-footer text-right"><a class="btn btn-primary" href="http://{{box.name}}.tamouse.org">Go to {{box.title}} <i class="fa fa-arrow-circle-right fa-2"></i></a></div>
+	  </div>
+	</div>
+	{% endfor %}
+      </div><!--.row-->
+      {% endfor %}
+    </section>
+  <!-- </main> -->
 
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <a href="http://art.tamouse.org">art</a> - recently begun (March
-      2015), this will become my place to display and talk about my
-      art, mainly watercolour painting at the moment.
-    </p>
-  </div>
+  <section class="secondary-feature">
+    <a name="webologist">  </a>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+	<p class="text-center">
+	  <em>'What's a "webologist"?'</em> you say? Simply, that I study
+	  the world wide web, its culture, its technology, its history,
+	  its direction, and the people that make it up. As an amateur
+	  anthropologist, this is my tribe.
+	  <a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
+	</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <a href="http://recipes.tamouse.org/">recipes</a> - my online (food) cookbook.
-    </p>
-  </div>
-
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <a href="http://wiki.tamouse.org">wiki</a> - a (very out-of-date
-      and rather defunct) <a href="http://pmwiki.org">PmWiki</a> that
-      is a collection of a whole pile of things.
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12 col-md-4">
-    <p>
-      <em>'What's a "webologist"?'</em> you say? Simply, that I study
-      the world wide web, its culture, its technology, its history,
-      its direction, and the people that make it up. As an amateur
-      anthropologist, this is my tribe.
-    </p>
-  </div>
 </div>
