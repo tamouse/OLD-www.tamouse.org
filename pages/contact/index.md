@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 navbar: true
+permalink: /contact/
 ---
 
 
@@ -16,7 +17,7 @@ navbar: true
 * Tumblr: [tamouse](http://tamouse.tumblr.com/)
 * DeviantArt: [muridaee](http://muridaee.deviantart.com/gallery)
 * Skype: tamouse
-* GTalk/Jabber: tamouse AT gmail DOT com
+* GTalk/Jabber: [tamouse@gmail.com](tamouse@gmail.com)
 * IRC: pontiki@irc.freenode.net#callahans
 * Diaspora: [pontiki elpmet](https://joindiaspora.com/people/4d11235b2c17436ab9001050)
 * Keybase.IO: [tamouse](https://keybase.io/tamouse)
