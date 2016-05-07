@@ -9,11 +9,30 @@
 // ------------------------------
 
 body {
-    padding-top: $navbar-height;
-    padding-bottom: 0;
+}
+
+.sidebar {
+    background-color: $grey;
+    vertical-align: top;
+    display: inline-block;
+    width: $sidebar-retracted-width;
+    max-width: $sidebar-retracted-width;
+    height: 100%;
+    min-height: 100%;
     @media (min-width: $screen-xs-min) {
-	padding-top: $navbar-height;
-	padding-bottom: $navbar-height;
+	width: $sidebar-extended-width;
+	max-width: $sidebar-extended-width;
+    }
+}
+
+.main {
+    vertical-align: top;
+    display: inline-block;
+    width: $main-extended-width;
+    max-width: $main-extended-width;
+    @media (min-width: $screen-xs-min) {
+	width: $main-retracted-width;
+	max-width: $main-retracted-width;
     }
 }
 
@@ -35,6 +54,7 @@ body {
 	display: none;
 	@media (min-width: $screen-xs-min) {
 	    display: block;
+	    width: 100%;
 	    background-color: $brand-primary;
 	    color: $gray-lighter;
 	    text-shadow: 2px 2px 2px $gray-darker;
@@ -61,12 +81,13 @@ body {
 
 
     .feature {
-	padding: 20px 0;
+	padding: 0;
 	.panel-body { height: inherit;}
 	.panel-footer a.btn { width: 200px; }
 	@media (min-width: $screen-sm-min) {
 	    padding: 60px 0;
 	    .panel-body { height: 220px; }
+	    .panel-footer a.btn { width: 150px; }
 	}
 	@media (min-width: $screen-md-min) {
 	    .panel-body { height: 150px; }

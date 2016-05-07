@@ -41,13 +41,13 @@ boxes:
 
 <div class="front-page">
   <div class="jumbotron">
-    <div class="container">
+    <div class="">
       <h1 class="text-center">Tamouse.Org</h1>
-      <p class="text-center">
+      <p class="text-center container">
 	Welcome to Tamara Temple's home on the web.
       </p>
 
-      <p class="container text-center">
+      <p class="text-center container">
 	I am a geeky person, mom of 2 grown kids,
 	a webologist, a software craftsperson, a
 	beginning watercolourist, sketcher, musician, photographer, and
@@ -56,33 +56,32 @@ boxes:
     </div>
   </div>
 
-  <!-- <main class="container"> -->
-    <section class="container feature">
-      <div class="page-header">
-	<h1 class="text-center">What you'll find on <em>tamouse.org</em></h1>
-      </div>
+  <section class="feature">
+    <div class="page-header">
+      <h1 class="text-center">What you'll find on <em>tamouse.org</em></h1>
+    </div>
 
-      {% for row in page.boxes %}
-      <div class="row">
-	{% for box in row %}
-	<div class="col-xs-12 col-sm-4">
-	  <div id="{{box.name}}-panel" class="panel panel-primary">
-	    <div class="panel-heading">
-	      <h1 class="panel-title text-center"><a href="http://{{box.name}}.tamouse.org">{{box.title}}</a></h1>
-	    </div>
-	    <div class="panel-body">
-	      <div>
-		{{box.description}}
-	      </div>
-	    </div>
-	    <div class="panel-footer text-right"><a class="btn btn-primary" href="http://{{box.name}}.tamouse.org">Go to {{box.title}} <i class="fa fa-arrow-circle-right fa-2"></i></a></div>
+    {% for row in page.boxes %}
+    <div class="row">
+      {% for box in row %}
+      <div class="col-xs-12 col-sm-4">
+	<div id="{{box.name}}-panel" class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h1 class="panel-title text-center"><a href="http://{{box.name}}.tamouse.org">{{box.title}}</a></h1>
 	  </div>
+	  <div class="panel-body">
+	    <div>
+	      {{box.description}}
+	    </div>
+	  </div>
+	  <div class="panel-footer text-right"><a class="btn btn-primary" href="http://{{box.name}}.tamouse.org">Go to {{box.title}} <i class="fa fa-arrow-circle-right fa-2"></i></a></div>
 	</div>
-	{% endfor %}
-      </div><!--.row-->
+      </div>
       {% endfor %}
-    </section>
-  <!-- </main> -->
+    </div><!--.row-->
+    {% endfor %}
+  </section><!-- feature -->
+
 
   <section class="secondary-feature">
     <a name="webologist">  </a>

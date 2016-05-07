@@ -1,20 +1,23 @@
 var gulp        = require('gulp');
 var help        = require('gulp-task-listing');
 var cp          = require('child_process');
-var minifyCss   = require('gulp-minify-css');
-var notify      = require("gulp-notify") 
+var cleanCSS    = require('gulp-clean-css');
+var notify      = require('gulp-notify') 
 var sass        = require('gulp-ruby-sass') ;
-var bower       = require('gulp-bower');
 var replace     = require('gulp-replace');
 var browserSync = require('browser-sync');
 
 var config = {
-    sassPath: "./_sass",
-    bowerDir: "./bower_components",
-    assetDir: "./assets",
-    outputDir: "./_site",
-    distDir: "./_dist"
+  assetDir: "./assets",
+  distDir: "./_dist",
+  nodeDir: "./node_modules",
+  outputDir: "./_site",
+  sassPath: "./_sass"
 }
+
+config.bootstrap = config.nodeDir + '/bootstrap-sass';
+config.fontAwesome = config.nodeDir + '/font-awesome';
+
 
 var messages = {
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -22,15 +25,32 @@ var messages = {
 
 gulp.task('help', help);
 
-gulp.task('bower', function() {
-  return bower()
-         .pipe(gulp.dest(config.bowerDir))
+gulp.task('jekyll-build', ['css','icons'], function (done) {
+  browserSync.notify(messages.jekyllBuild);
+  return cp.spawn(
+    'bundle',
+    [
+      'exec',
+      'jekyll',
+      'build'
+    ],
+    {stdio: 'inherit'})
+    .on('close', done);
 });
 
-gulp.task('jekyll-build', ['css','icons','bower'], function (done) {
-  browserSync.notify(messages.jekyllBuild);
-  return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
-    .on('close', done);
+gulp.task('jekyll-build-dist', ['css','icons'], function () {
+  return cp.spawn(
+    'bundle',
+    [
+      'exec',
+      'jekyll',
+      'build',
+      '--config',
+      '_config.yml,_baseurl.yml',
+      '--destination',
+      config.distDir
+    ],
+    {stdio: 'inherit'});
 });
 
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
@@ -38,30 +58,34 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 });
 
 gulp.task('icons', function() {
-  return gulp.src(
-    config.bowerDir + "/fontawesome/fonts/**.*")
-         .pipe(gulp.dest(config.assetDir + "/fonts"))
-         .pipe(gulp.dest(config.outputDir + "/assets/fonts"));
+  return gulp.src([
+    config.fontAwesome + "/fonts/**.*",
+    config.bootstrap + "/assets/fonts/bootstrap/**.*"
+  ])
+             .pipe(gulp.dest(config.assetDir + "/fonts"))
+             .pipe(gulp.dest(config.outputDir + "/assets/fonts"));
 });
 
 gulp.task('css', function() {
-  return sass(config.sassPath + "/main.scss", {
-    style: "compressed",
-    loadPath: [
-      config.sassPath,
-      config.bowerDir + "/normalize.scss/",
-      config.bowerDir + "/fontawesome/scss"
-    ],
-    compass: true
-  })
-         .pipe(minifyCss())
-         .pipe(gulp.dest(config.assetDir + "/css"))
-         .pipe(gulp.dest(config.outputDir + "/assets/css"))
-.pipe(browserSync.stream());
-
+  return sass(
+    config.sassPath + "/main.scss",
+    {
+      style: "compressed",
+      loadPath: [
+	config.sassPath,
+	config.bootstrap + '/assets/stylesheets',
+	config.fontAwesome + '/scss'
+      ],
+      compass: true
+    }
+  )
+	  .pipe(cleanCSS({compatibility: 'ie8'}))
+	  .pipe(gulp.dest(config.assetDir + "/css"))
+	  .pipe(gulp.dest(config.outputDir + "/assets/css"))
+	  .pipe(browserSync.stream());
 });
 
-gulp.task('build', ['bower', 'icons', 'css' ,'jekyll-build']);
+gulp.task('build', ['icons', 'css' ,'jekyll-build']);
 
 gulp.task('serve', ['build'], function() {
   browserSync.init({
@@ -72,13 +96,23 @@ gulp.task('serve', ['build'], function() {
 
   // Start a watch for rebuilds
   gulp.watch(['_sass/*.scss'], ['css'])
-  gulp.watch(['_config.yml', '*.html', '*.md', '*.xml', 'pages/**/*.*', '_layouts/*.html', '_includes/*', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch([
+    '_config.yml',
+    '*.html',
+    '*.md',
+    '*.xml',
+    '*.txt',
+    'pages/**/*.*',
+    '_layouts/*.html',
+    '_includes/*',
+    '_plugins/*.html',
+    '_posts/*'
+  ],
+	     ['jekyll-rebuild']
+  );
 });
 
-gulp.task('jekyll-build-dist', ['css','icons','bower'], function () {
-  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', '_config.yml,_baseurl.yml', '--destination', config.distDir], {stdio: 'inherit'});
-});
 
-gulp.task('dist', ['bower', 'icons', 'css', 'jekyll-build-dist']);
+gulp.task('dist', ['icons', 'css', 'jekyll-build-dist']);
 
 gulp.task('default', ['serve']);
