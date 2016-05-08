@@ -33,3 +33,4 @@ exclude:
 - Landing_Page
 - Gemfile
 - Gemfile.lock
+- bin
