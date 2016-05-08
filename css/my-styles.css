@@ -1,0 +1,9 @@
+.jumbotron {
+    background: lightseagreen;
+}
+.navbar-brand {
+    background: seagreen;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: grey;
+}
