@@ -1,5 +1,4 @@
 ---
-layout: none
 ---
 # humanstxt.org/
 # The humans responsible & technology colophon
@@ -19,3 +18,7 @@ layout: none
   Compass, Jekyll
   Inspinia Landing Page
   tagul.com word cloud: https://tagul.com/ko4ag73o8cah/cloud-1
+
+# SOURCE
+
+  http://github.com/tamouse/www.tamouse.org
