@@ -1,36 +1,20 @@
 -
-  - name: blog
-    title: Blog
-    description: |
-      My web log. Things I find interesting and want to share with
-      others. Somewhat of a hodgepodge of funny, sciency, crittery
-      stuff.
   - name: swaac
-    title: SWaaC
-    description: |
-      Software As A Craft (SWAAC), my
-      development blog (aka devblog) where I share code, craft, process
-      and learning about how to do the craft of writing, testing,
-      releasing software.
+    title: SWaaC Blog
+    description: Software As A Craft, my dev blog.
+  - name: art
+    title: Art Blog
+    description: watercolour, ink, sketch, photography, etc.
   - name: resume
     title: Resume
-    description: |
-      My online resume site, built
-      in middleman.
+    description: My online resume site, built in middleman.
 -
-  - name: art
-    title: Art
-    description: |
-      Begun in March 2015, this is my place to display and talk
-      about my art, mainly watercolour painting at the moment.
+  - name: blog
+    title: Web Blog
+    description: Stuff online that I find interesting.
   - name: recipes
-    title: Recipes
-    description: |
-      My online (food) cookbook.
+    title: Recipes Blog
+    description: My online (food) cookbook.
   - name: wiki
     title: Wiki
-    description: |
-      A very out-of-date and rather
-      defunct PmWiki that is a
-      collection of a whole pile of things. I'm moving most of the
-      entries into other sections of this site.
+    description: A very out-of-date and rather defunct PmWiki.

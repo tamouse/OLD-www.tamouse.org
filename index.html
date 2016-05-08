@@ -24,14 +24,14 @@ layout: default
     </div>
   </nav>
 </div>
-<div class="jumbotron bg-primary">
+<div class="jumbotron bg-primary hidden-xs">
   <div class="">
     <h1 class="text-center">Tamouse.Org</h1>
     <p class="text-center container">
       Welcome to Tamara Temple's home on the web.
     </p>
 
-    <p class="text-center container">
+    <p class="text-center container" >
       I am a geeky person, mom of 2 grown kids,
       a webologist, a software craftsperson, a
       beginning watercolourist, sketcher, musician, photographer, and
@@ -46,14 +46,39 @@ layout: default
   </div>
   {% for boxrow in site.data.boxes %}<div class="row">
     {% for box in boxrow %}
-    <div class="col-sm-4">
-      <h2>{{box.title}}</h2>
-      <p>{{box.description}}</p>
-      <p><a class="btn btn-default" href="http://{{box.name}}.tamouse.org">Go <i class="fa fa-arrow-right"></i></a></p>
+    <div class="col-sm-4 bottom-ease">
+      <a href="http://{{box.name}}.tamouse.org" target="_blank">
+      <div class="services-box">
+	<figure>
+	  <div><img src="img/{{box.name}}.jpg" alt="name" /></div>
+	  <figcaption>
+	    <h2>{{box.title}}</h2>
+	    <p>{{box.description}}</p>
+	    <!-- <p><a class="btn btn-default" href="http://{{box.name}}.tamouse.org">Go <i class="fa fa-arrow-right"></i></a></p> -->
+	  </figcaption>
+	</figure>
+      </div>
+      </a>
     </div>
     {% endfor %}
   </div>{% endfor %}
 </section>
+
+<section class="container">
+  <h1 class="text-center">"What is a <em>Webologist</em>?" I hear you ask.</h1>
+  <p>
+    A <strong>Webologist</strong> is a term I invented for myself, as someone who studies
+    the <em>culure</em>, <em>people</em>, <em>technologies</em>, and <em>impacts</em> of the
+    World-Wide Web and the Internet. I am a practitioner of software development, including building
+    web applications in Rails, Angular, PHP, and other languages and frameworks.
+  </p>
+  <p>
+    I am also a practitioner of Software Engineering as a Craft (aka SWAAC) which I teach,
+    coach, consult, and want to share with others to help them discover this fun, exciting, and
+    rewarding field so I have more people to have fun with.
+  </p>
+</section>
+
 
 <section id="contact" class="gray-section contact">
   <div class="container">
@@ -67,12 +92,20 @@ layout: default
       <div class="col-lg-12 text-center">
         <a href="mailto:{{site.email}}" class="btn btn-primary">Send me mail</a>
         <p class="m-t-sm">
-          Or follow me on social media
+          Follow me on social media
         </p>
         <ul class="list-inline social-icon">
-          <li><a href="http://twitter.com/{{site.social.twitter}}"><i class="fa fa-twitter"></i></a> </li>
-          <li><a href="https://github.com/{{site.social.github}}"><i class="fa fa-github"></i></a></li>
+          <li><a href="http://twitter.com/{{site.social.twitter}}" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a> </li>
+          <li><a href="https://github.com/{{site.social.github}}" target="_blank" title="github"><i class="fa fa-github"></i></a></li>
+	  <li><a href="https://www.linkedin.com/in/{{site.social.linkedin}}" target="_blank" title="linkedIn"><i class="fa fa-linkedin"></i></a></li>
+	  <li><a href="https://www.facebook.com/{{site.social.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
         </ul>
+	<ul class="list-inline social-icon">
+	  <li><a href="https://plus.google.com/+{{site.social.google_plus}}" target="_blank" title="Google+"><i class="fa fa-google"></i></a></li>
+	  <li><a href="http://www.instagram.com/{{site.social.instagram}}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+	  <li><a href="http://{{site.social.deviant_art}}.deviantart.com" target="_blank" title="DeviantArt"><i class="fa fa-deviantart"></i></a></li>
+	  <li><a href="https://keybase.io/{{site.social.keybase_io}}" target="_blank" title="Keybase.IO"><i class="fa fa-lock"></i></a></li>
+	</ul>
       </div>
     </div>
     <div class="row">

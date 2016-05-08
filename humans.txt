@@ -18,3 +18,4 @@ layout: none
   jQuery, Bootstrap, FontAwesome
   Compass, Jekyll
   Inspinia Landing Page
+  tagul.com word cloud: https://tagul.com/ko4ag73o8cah/cloud-1

@@ -1,9 +1,44 @@
 .jumbotron {
     background: lightseagreen;
+    padding: 200px;
 }
 .navbar-brand {
     background: seagreen;
 }
 .navbar-default .navbar-nav > li > a:hover {
     color: grey;
+}
+.services-box figure {
+    margin: 0;
+    position: relative;
+}
+.services-box figure img {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    /* width: 320px; */
+    /* height: 240px; */
+}
+.services-box figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    background: #2c3f52;
+    color: #ed4e6e;
+    height: 100%;
+    width: 80%;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    transform: rotateY(-90deg);
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+.services-box figure:hover figcaption {
+    opacity: 1;
+    transform: rotateY(0deg);
+    transition: transform 0.4s, opacity 0.1s;
+}
+.bottom-ease {
+    padding-bottom: 15px;
 }
