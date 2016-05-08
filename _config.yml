@@ -24,14 +24,10 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-highlighter: pygments
+
 exclude:
 - README.md
-- bower.json
-- package.json
-- gulpfile.js
-- node_modules
-- bower_components
+- Guardfile
 - Landing_Page
 - Gemfile
 - Gemfile.lock
