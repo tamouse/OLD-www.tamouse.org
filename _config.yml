@@ -4,25 +4,33 @@ name: www.tamouse.org
 title: Tamouse.Org
 author: Tamara Temple
 email: tamouse@gmail.com
+organization: Pontiki Software Crafts
 description: Main Web Site
 url: http://www.tamouse.org
-twitter_username: tamouse
-github_username: tamouse
+githubrepo: https://github.com/tamouse/www.tamouse.org
 baseurl: ''
 social:
   twitter: tamouse
   github: tamouse
+  linkedin: tamaratemple
+  facebook: "tamara.temple"
+  google_plus: "TamaraTemple"
+  instagram: tamouse
+  tumbr: tamouse
+  deviant_art: muridaee
+  skype: tamouse
+  gtalk: tamouse
+  keybase_io: tamouse
+
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-highlighter: pygments
-defaults:
-  author: Tamara Temple
+
 exclude:
 - README.md
-- bower.json
-- package.json
-- gulpfile.js
-- node_modules
-- bower_components
+- Guardfile
+- Landing_Page
+- Gemfile
+- Gemfile.lock
+- bin

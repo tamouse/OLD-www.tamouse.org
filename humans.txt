@@ -1,18 +1,24 @@
+---
+---
 # humanstxt.org/
 # The humans responsible & technology colophon
 
 # TEAM
 
-  Tamara Temple, creator, tamouse
+  {{site.author}}, @{{site.social.twitter}}, <{{site.email}}>
 
 # THANKS
 
-  <name>
+  jaybe, parkr
 
 # TECHNOLOGY COLOPHON
 
   HTML5, CSS3
   jQuery, Bootstrap, FontAwesome
   Compass, Jekyll
-  Gulp
-  drink_up_doctor
+  Inspinia Landing Page
+  tagul.com word cloud: https://tagul.com/ko4ag73o8cah/cloud-1
+
+# SOURCE
+
+  http://github.com/tamouse/www.tamouse.org

@@ -1,47 +1,11 @@
 ---
 layout: default
-boxes:
-  -
-    - name: blog
-      title: Blog
-      description: >-
-        My web log. Things I find interesting and want to share with
-        others. Somewhat of a hodgepodge of funny, sciency, crittery
-        stuff.
-    - name: swaac
-      title: SWaaC
-      description: >-
-        Software As A Craft (SWAAC), my
-        development blog (aka devblog) where I share code, craft, process
-        and learning about how to do the craft of writing, testing,
-        releasing software.
-    - name: resume
-      title: Resume
-      description: >-
-        My online resume site, built
-        in <a href="http://middlemanapp.com">middleman</a>.
-  -
-    - name: art
-      title: Art
-      description: >-
-        Begun in March 2015, this is my place to display and talk
-        about my art, mainly watercolour painting at the moment.
-    - name: recipes
-      title: Recipes
-      description: >-
-        My online (food) cookbook.
-    - name: wiki
-      title: Wiki
-      description: >-
-        A very out-of-date and rather
-        defunct <a href="http://pmwiki.org">PmWiki</a> that is a
-        collection of a whole pile of things. I'm moving most of the
-        entries into other sections of this site.
 ---
 
-<div class="front-page">
-  <div class="jumbotron">
+<div class="navbar-wrapper">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
+<<<<<<< HEAD
       <h1 class="text-center">
 	<img src="/img/tamouse-sig_trans_grey.gif" class="img-responsive" alt="" />
       </h1>
@@ -55,50 +19,156 @@ boxes:
 	beginning watercolourist, sketcher, musician, photographer, and
 	reclusive chatter.
       </p>
-    </div>
-  </div>
-
-  <!-- <main class="container"> -->
-    <section class="container feature">
-      <div class="page-header">
-	<h1 class="text-center">What you'll find on <em>tamouse.org</em></h1>
+=======
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">{{site.title}}</a>
       </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="page-scroll" href="#page-top">Home</a></li>
+          <li><a class="page-scroll" href="#features">Features</a></li>
+          <li><a class="page-scroll" href="#webologist">Webologist</a></li>
+          <li><a class="page-scroll" href="#hireme">Hire Me</a></li>
+          <li><a class="page-scroll" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+>>>>>>> develop
+    </div>
+  </nav>
+</div>
+<div class="jumbotron brand hidden-xs">
+  <div class="">
+    <h1 class="text-center">Tamouse.Org</h1>
+    <p class="text-center container">
+      Welcome to Tamara Temple's home on the web.
+    </p>
 
-      {% for row in page.boxes %}
-      <div class="row">
-	{% for box in row %}
-	<div class="col-xs-12 col-sm-4">
-	  <div id="{{box.name}}-panel" class="panel panel-primary">
-	    <div class="panel-heading">
-	      <h1 class="panel-title text-center"><a href="http://{{box.name}}.tamouse.org">{{box.title}}</a></h1>
-	    </div>
-	    <div class="panel-body">
-	      <div>
-		{{box.description}}
-	      </div>
-	    </div>
-	    <div class="panel-footer text-right"><a class="btn btn-primary" href="http://{{box.name}}.tamouse.org">Go to {{box.title}} <i class="fa fa-arrow-circle-right fa-2"></i></a></div>
-	  </div>
-	</div>
-	{% endfor %}
-      </div><!--.row-->
-      {% endfor %}
-    </section>
-  <!-- </main> -->
+    <p class="text-center container" >
+      I am a geeky person, mom of 2 grown kids,
+      a <a class="page-scroll" href="#webologist">webologist</a>,
+      <br />
+      software craftsperson, watercolourist, sketcher,
+      musician, photographer, <br />
+      and voracious online chatter
+      and tweeter.
+    </p>
+  </div>
+</div>
 
-  <section class="secondary-feature">
-    <a name="webologist">  </a>
+<section id="features" class="container services">
+  <div class="page-header">
+    <h2 class="text-center">Some of the sites you'll find under <em>{{site.title}}</em> include:</h2>
+  </div>
+  {% for boxrow in site.data.boxes %}<div class="row">
+    {% for box in boxrow %}
+    <div class="col-sm-4 bottom-ease">
+      <div class="services-box">
+	<figure>
+	  <div><img src="img/{{box.name}}.jpg" alt="name" /></div>
+	  <figcaption>
+	    <h2>{{box.title}}</h2>
+	    <p>{{box.description}}</p>
+	    <p>
+	      <a class="btn btn-default"
+		 href="http://{{box.name}}.tamouse.org"
+		 target="_blank">
+		Go <i class="fa fa-arrow-right"></i>
+	      </a>
+	    </p>
+	  </figcaption>
+	</figure>
+      </div>
+    </div>
+    {% endfor %}
+  </div>{% endfor %}
+</section>
+
+<section id="webologist" class="jumbotron bg-white">
+  <h1 class="text-center">"What is a <em>Webologist</em>?"<br>I hear you ask.</h1>
+  <p>
+    A <strong>Webologist</strong> is a term I invented for myself, as someone who studies
+    the <em>culure</em>, <em>people</em>, <em>technologies</em>, and <em>impacts</em> of the
+    World-Wide Web and the Internet. I am a practitioner of software development, including building
+    web applications in Rails, Angular, PHP, and other languages and frameworks.
+  </p>
+  <p>
+    I am also a teacher of Software Engineering as a Craft (aka SWAAC) which I coach,
+    consult, teach, and share with others to help them discover this fun, exciting, and
+    rewarding field so I have more people to have fun with.
+  </p>
+</section>
+
+<section id="hireme" class="jumbotron bg-primary">
+  <div class="container text-center">
+    <a class="btn btn-lg btn-info" href="mailto:tamouse@gmail.com">
+      <h1 style="padding: 30px;">
+	<em>
+	  Hire me!
+	</em>
+      </h1>
+    </a>
+  </div>
+  <div class="container" style="margin-top: 60px">
+    <p>
+      I am available for:
+    </p>
+    <ul>
+      <li>
+	freelance and part-time contracting work in software development,
+	full-stack web development, and devops,
+      </li>
+      <li>
+	consulting on product architecture, quality assurance strategies, team building, and relationship-based product definition,
+      </li>
+      <li>
+	and personal software development coaching.
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="contact" class="contact no-top">
+  <div class="container">
+    <div class="row m-b-lg">
+      <div class="col-lg-12 text-center">
+        <div class="navy-line"></div>
+        <h1>Contact Me</h1>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
-	<p class="text-center">
-	  <em>'What's a "webologist"?'</em> you say? Simply, that I study
-	  the world wide web, its culture, its technology, its history,
-	  its direction, and the people that make it up. As an amateur
-	  anthropologist, this is my tribe.
-	  <a href="#top"><i class="fa fa-arrow-circle-up"></i></a>
+      <div class="col-lg-12 text-center">
+        <a href="mailto:{{site.email}}" class="btn btn-primary">Send me mail</a>
+        <p class="m-t-sm">
+          Follow me on social media
+        </p>
+        <ul class="list-inline social-icon">
+          <li><a href="http://twitter.com/{{site.social.twitter}}" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a> </li>
+          <li><a href="https://github.com/{{site.social.github}}" target="_blank" title="github"><i class="fa fa-github"></i></a></li>
+	  <li><a href="https://www.linkedin.com/in/{{site.social.linkedin}}" target="_blank" title="linkedIn"><i class="fa fa-linkedin"></i></a></li>
+	  <li><a href="https://www.facebook.com/{{site.social.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+        </ul>
+	<ul class="list-inline social-icon">
+	  <li><a href="https://plus.google.com/+{{site.social.google_plus}}" target="_blank" title="Google+"><i class="fa fa-google"></i></a></li>
+	  <li><a href="http://www.instagram.com/{{site.social.instagram}}" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+	  <li><a href="http://{{site.social.deviant_art}}.deviantart.com" target="_blank" title="DeviantArt"><i class="fa fa-deviantart"></i></a></li>
+	  <li><a href="https://keybase.io/{{site.social.keybase_io}}" target="_blank" title="Keybase.IO"><i class="fa fa-lock"></i></a></li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+        <p>
+	  <strong>Copyright &copy; 2015 {{site.organization }}</strong><br />
+	  <a href="{{site.githubrepo}}">View source on <i class="fa fa-github"></i> Github</a>
 	</p>
       </div>
     </div>
-  </section>
-
-</div>
+  </div>
+</section>
