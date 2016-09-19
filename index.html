@@ -26,22 +26,12 @@ layout: default
     </div>
   </nav>
 </div>
+<div class="visible-xs-block brand">
+  {% include brand_content.html %}
+</div>
 <div class="jumbotron brand hidden-xs">
   <div class="">
-    <h1 class="text-center">Tamouse.Org</h1>
-    <p class="text-center container">
-      Welcome to Tamara Temple's home on the web.
-    </p>
-
-    <p class="text-center container" >
-      I am a geeky person, mom of 2 grown kids,
-      a <a class="page-scroll" href="#webologist">webologist</a>,
-      <br />
-      software craftsperson, watercolourist, sketcher,
-      musician, photographer, <br />
-      and voracious online chatter
-      and tweeter.
-    </p>
+    {% include brand_content.html %}
   </div>
 </div>
 
@@ -74,18 +64,20 @@ layout: default
 </section>
 
 <section id="webologist" class="jumbotron bg-white">
-  <h1 class="text-center">"What is a <em>Webologist</em>?"<br>I hear you ask.</h1>
-  <p>
-    A <strong>Webologist</strong> is a term I invented for myself, as someone who studies
-    the <em>culure</em>, <em>people</em>, <em>technologies</em>, and <em>impacts</em> of the
-    World-Wide Web and the Internet. I am a practitioner of software development, including building
-    web applications in Rails, Angular, PHP, and other languages and frameworks.
-  </p>
-  <p>
-    I am also a teacher of Software Engineering as a Craft (aka SWAAC) which I coach,
-    consult, teach, and share with others to help them discover this fun, exciting, and
-    rewarding field so I have more people to have fun with.
-  </p>
+  <div class="container text-center">
+    <h1>"What is a <em>Webologist</em>?"<br>I hear you ask.</h1>
+    <p>
+      A <strong>Webologist</strong> is a term I invented for myself, as someone who studies
+      the <em>culure</em>, <em>people</em>, <em>technologies</em>, and <em>impacts</em> of the
+      World-Wide Web and the Internet. I am a practitioner of software development, including building
+      web applications in Rails, Angular, PHP, and other languages and frameworks.
+    </p>
+    <p>
+      I am also a teacher of Software Engineering as a Craft (aka SWAAC) which I coach,
+      consult, teach, and share with others to help them discover this fun, exciting, and
+      rewarding field so I have more people to have fun with.
+    </p>
+  </div>
 </section>
 
 <section id="hireme" class="jumbotron bg-primary">
