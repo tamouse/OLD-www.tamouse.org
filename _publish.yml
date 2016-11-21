@@ -1,3 +1,4 @@
-baseurl=''
-url='http://www.tamouse.org'
-destination=docs/
+---
+baseurl: ''
+url: 'http://www.tamouse.org'
+destination: docs

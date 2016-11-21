@@ -1,0 +1,23 @@
+{
+  "name": "www.tamouse.org",
+  "version": "1.0.0",
+  "description": "Personal home page for Tamara Temple",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec guard",
+    "build": "bundle exec jekyll build",
+    "prepublish": "bundle exec jekyll build --config=_config.yml,_publish.yml",
+    "publish": "git add --all && git commit -m 'published' && git push -fu origin HEAD",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamouse/www.tamouse.org.git"
+  },
+  "author": "Tamara Temple <tamouse@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamouse/www.tamouse.org/issues"
+  },
+  "homepage": "https://github.com/tamouse/www.tamouse.org#readme"
+}
