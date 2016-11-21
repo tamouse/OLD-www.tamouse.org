@@ -6,7 +6,8 @@
   "scripts": {
     "start": "bundle exec guard",
     "build": "bundle exec jekyll build",
-    "publish": "npm run build && (cd _site && git add --all && git commit --message \"`date '+published on %F %T'`\" && git push -fu origin deploy)",
+    "prepublish": "bundle exec jekyll build --config=_config.yml,_publish.yml",
+    "publish": "git add --all && git commit -m 'published' && git push -fu origin HEAD",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
