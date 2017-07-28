@@ -1,0 +1,63 @@
+/* this will be fun, hey? */
+
+/* The portfolio boxes are all clickable links.
+       Without wanting to gin up some javascript and
+       add onclick event listeners, I made them
+       anchor tags instead. Since they're anchor tags,
+       they can't contain any block elements directly,
+       so I used spans. Turn everything back into blocks
+       with CSS is easy.
+*/
+a.portfolio-box {
+    display: block;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    @include light-title-text;
+
+    height: $box-height;
+    text-decoration: none;
+
+    @media (min-width: $screen-md) {
+        height: 100%;
+        min-height: 100%;
+    }
+
+    .flapper-wrapper {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: $box-height;
+        /* min-height: 100%; */
+        /* min-width: 100%; */
+        background-color: transparentize($dark-brand, 0.4);
+        @include center-both;
+        text-align: center;
+        @media (min-width: $screen-md) {
+            height: 100%;
+            min-height: 100%;
+        }
+    }
+}
+
+.no-touchevents {
+    a.portfolio-box {
+        .flapper-wrapper {
+            visibility: hidden;
+            background-color: transparent;
+            transition: background-color 500ms;
+        }
+        &:hover {
+            color: $light-accent;
+            text-decoration: none;
+
+            .flapper-wrapper {
+                background-color: transparentize($dark-brand, 0.25);
+                visibility: visible;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+<section id="portfolio" class="flex-item">
+  <div class="box-container">
+    <div class="box">
+      <%= partial("components/portfolio_box", locals: {
+          bg_image: 'swaac-bg',
+          title: 'SWaaC',
+          desc: "My devblog, Software as a Craft",
+          link: "https://swaac.tamouse.org"
+          }) %>
+    </div>
+    <div class="box">
+      <%= partial("components/portfolio_box", locals: {
+          bg_image: 'art-bg',
+          title: "My Art Blog",
+          desc: "watercolour, ink, sketching, photography, digital creations",
+          link: "https://art.pontiki.io"
+          }) %>
+    </div>
+    <div class="box">
+      <%= partial("components/portfolio_box", locals: {
+          title: "My Resume",
+          bg_image: "resume-bg",
+          desc: "My online professional resume",
+          link: "https://resume.tamouse.org"
+          }) %>
+    </div>
+    <div class="box">
+      <%= partial("components/portfolio_box", locals: {
+          title: "Web Blog",
+          bg_image: "blog-bg",
+          desc: "A compendium of rumblings and ramblings of a well-traveled tech-mouse.",
+          link: "https://blog.tamouse.org"
+          }) %>
+    </div>
+    <div class="box">
+      <%= partial("components/portfolio_box", locals: {
+          title: "Recipe Collection",
+          bg_image: "recipes-bg",
+          link: "https://recipes.tamouse.org",
+          desc: "My (cooking) recipe collection"
+          }) %>
+    </div>
+    <div class="box">
+      <%= partial("components/portfolio_box", locals: {
+          title: "My GitHub",
+          bg_image: "wiki-bg",
+          link: "https://github.com/tamouse",
+          desc: "My repositories on GitHub."
+          })  %>
+    </div>
+  </div>
+</section>

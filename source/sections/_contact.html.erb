@@ -1,0 +1,85 @@
+<section id="contact" class="flex-item feature">
+  <div class="wrapper-narrow">
+    <h2 class="">Contact Me</h2>
+    <div>
+      <a class="btn btn-info" href="mailto:tamara@tamouse.org">Send me an email</a>
+    </div>
+    <div class="dark-text"><small>Follow me on social media:</small></div>
+
+    <div class="social-icon-wrapper">
+
+      <div class="flex-row flex-center">
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "twitter",
+              text: "Twitter",
+              tooltip: "@tamouse on twitter",
+              link: "https://twitter.com/tamouse"
+              }) %>
+        </div>
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "github",
+              text: "GitHub",
+              tooltip: "tamouse on github",
+              link: "https://github.com/tamouse"
+              }) %>
+        </div>
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "linkedin",
+              text: "LinkedIn",
+              tooltip: "Tamara Temple on LinkedIn",
+              link: "https://www.linkedin.com/in/tamaratemple"
+              }) %>
+        </div>
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "facebook",
+              text: "Facebook",
+              tooltip: "Tamara Temple on Facebook",
+              link: "https://www.facebook.com/tamara.temple"
+              }) %>
+        </div>
+      </div>
+
+      <div class="flex-row flex-center">
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "google-plus",
+              text: "Google+",
+              tooltip: "Tamara Temple on Google-Plus",
+              link: "https://plus.google.com/+TamaraTemple"
+              }) %>
+        </div>
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "instagram",
+              text: "Instagram",
+              tooltip: "tamouse on instagram",
+              link: "http://www.instagram.com/tamouse"
+              }) %>
+        </div>
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "deviantart",
+              text: "DeviantArt",
+              tooltip: "muridaee on deviant art",
+              link: "http://muridaee.deviantart.com/"
+              }) %>
+        </div>
+        <div class="flex-item">
+          <%= partial("components/social_media", locals: {
+              icon: "lock",
+              text: "Keybase.IO",
+              tooltip: "tamouse on Keybase.IO",
+              link: "https://keybase.io/tamouse"
+              }) %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a class="btn btn-info" href="/tamara.temple.vcf">Download VCard</a>
+    </div>
+  </div>
+</section>

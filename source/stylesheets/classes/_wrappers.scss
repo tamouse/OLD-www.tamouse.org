@@ -1,0 +1,12 @@
+.wrapper {
+    max-width: 80%;
+    margin: auto;
+    @media (min-width: $screen-md) {
+        max-width: 60%;
+    }
+}
+
+.wrapper-narrow {
+    max-width: 40%;
+    margin: auto;
+}

@@ -1,0 +1,27 @@
+
+$icon-size: 28px;
+
+.social-icon-wrapper {
+    max-width: 4 * ($icon-size + 2px);
+    margin: auto;
+}
+
+a.social-icon {
+    background-color: $dark-brand;
+    color: $light-accent;
+    padding: 4px 8px;
+    height: $icon-size;
+    width: $icon-size;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    text-shadow: none;
+    font-size: ($icon-size / 2.0);
+
+    .text {
+        visibility: hidden;
+        width: 0;
+        max-width: 0;
+    }
+}

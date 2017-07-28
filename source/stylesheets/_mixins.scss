@@ -1,0 +1,21 @@
+/* mixins */
+@mixin center-both {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-both {
+    @include center-both;
+}
+
+@mixin light-title-text {
+    color: $light-accent;
+    text-shadow: 2px 2px black;
+}
+
+@mixin dark-title-text {
+    color: #333;
+    text-shadow: 2px 2px #ccc;
+}
+
+.dark-text { @include dark-title-text; }

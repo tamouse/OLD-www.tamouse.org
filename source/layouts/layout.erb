@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= current_page.data.title || "Tamouse.Org" %></title>
+    <%= stylesheet_link_tag "#{config[:baseurl]}/vendor/bootstrap/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "#{config[:baseurl]}/vendor/font-awesome/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag "#{config[:baseurl]}/stylesheets/site" %>
+  </head>
+  <body>
+    <%= partial "components/header" %>
+    <main class="main" role="main">
+      <div id="top" class="flex-container">
+        <%= yield %>
+      </div>
+    </main>
+
+
+    <%= javascript_include_tag "#{config[:baseurl]}/vendor/jquery/js/jquery-3.2.1.min" %>
+    <%= javascript_include_tag "#{config[:baseurl]}/vendor/modernizr/js/modernizr-custom" %>
+    <%= javascript_include_tag "#{config[:baseurl]}/vendor/bootstrap/js/bootstrap.min" %>
+    <%= javascript_include_tag "#{config[:baseurl]}/javascripts/site" %>
+  </body>
+</html>

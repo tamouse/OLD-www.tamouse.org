@@ -1,0 +1,24 @@
+<section id="about" class="flex-item feature">
+  <div class="wrapper">
+    <h1 class="text-center">Tamouse.Org</h1>
+    <h2 class="text-center">
+      Welcome to Tamara Temple's Home on the Web!
+    </h2>
+    <p class="text-center lead">
+      I am a geeky person, mom to 2 grown daughters, a
+      <a href="#webology"><strong>webologist</strong></a>,
+      <%= partial("components/external_link", locals: {
+          text: "software craftperson",
+          link: "https://swaac.tamouse.org",
+          title: "Software as a Craft - the devblog of tamouse"
+          }) %>
+      <%= partial("components/external_link", locals: {
+          text: "watercolourist, sketcher, musician, photographer",
+          link: "https://art.pontiki.io",
+          title: "The Art Blog of tamouse"
+          }) %>
+      and
+      <a href="#hireme">teacher</a>.
+    </p>
+  </div>
+</section>

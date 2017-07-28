@@ -1,0 +1,60 @@
+/* Site classes */
+.main {
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    top: $navbar-height;
+    bottom: $navbar-height;
+}
+
+
+.feature {
+    @include light-title-text;
+    @media (min-width: $screen-sm) {
+        min-height: 100vh;
+        height: 100vh;
+        @include center-both;
+        font-size: 1.3em;
+    }
+}
+
+.header {
+    background-color: $dark-brand;
+    color: $light-accent;
+    .navbar-default {
+        background-color: $dark-brand;
+        background-image: none;
+        color: $light-accent;
+        border-radius: 0;
+        border: none;
+        .navbar-header {
+            .navbar-brand {
+                color: $light-accent;
+                .logo {
+                    display: inline;
+                    max-height: $navbar-height / 2;
+                }
+            }
+        }
+        .navbar-nav {
+            > li {
+                > a, > a:active, > a:hover, > a:visited {
+                    color: $light-accent;
+                }
+            }
+            > li.active {
+                background-color: black;
+            }
+        }
+    }
+}
+
+.footer {
+    margin-top: 15px;
+    padding: 7px;
+    font-size: 0.8em;
+    background-color: $dark-brand;
+    height: 100px;
+    color: #ccc;
+}

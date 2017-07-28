@@ -1,0 +1,18 @@
+
+#hireme {
+    background-color: $light-accent;
+    padding: 10px;
+}
+
+.call-to-action {
+    background-image: none;
+    background-color: $dark-brand;
+    border-color: $dark-brand;
+    padding: 0.5em;
+    margin: 1.5em;
+    border-radius: 15px;
+    font-size: 2em;
+    text-align: center;
+    color: $light-accent;
+    text-shadow: 2px 2px #000;
+}
