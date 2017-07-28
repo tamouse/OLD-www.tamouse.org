@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+Tamara Temple, @tamouse, https:/github.com/tamouse
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3
+  jQuery, Bootstrap, FontAwesome
+  middlemanapp
+
+# SOURCE
+
+  http://github.com/tamouse/www.tamouse.org

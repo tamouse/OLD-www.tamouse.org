@@ -58,6 +58,11 @@ a, a:hover, a:visited, a:active {
     color: azure;
     border-radius: 0;
     border: none; }
+    .header .navbar-default .navbar-header .navbar-brand {
+      color: azure; }
+      .header .navbar-default .navbar-header .navbar-brand .logo {
+        display: inline;
+        max-height: 25px; }
     .header .navbar-default .navbar-nav > li > a, .header .navbar-default .navbar-nav > li > a:active, .header .navbar-default .navbar-nav > li > a:hover, .header .navbar-default .navbar-nav > li > a:visited {
       color: azure; }
     .header .navbar-default .navbar-nav > li.active {
@@ -68,7 +73,8 @@ a, a:hover, a:visited, a:active {
   padding: 7px;
   font-size: 0.8em;
   background-color: rebeccapurple;
-  height: 100px; }
+  height: 100px;
+  color: #ccc; }
 
 /* containers for flexing */
 .flex-container {
