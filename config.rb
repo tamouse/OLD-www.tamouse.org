@@ -43,5 +43,5 @@ page '/*.txt', layout: false
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
 configure :build do
-  # config[:baseurl] = "/" # see https://forum.middlemanapp.com/t/trouble-with-link-to-and-relative-links-for-gh-pages/1864/2
+  config[:baseurl] = "/www.tamouse.org" # see https://forum.middlemanapp.com/t/trouble-with-link-to-and-relative-links-for-gh-pages/1864/2
 end
